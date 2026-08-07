@@ -1,0 +1,1009 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;title&gt;IPL Mega Auction '27 — Live Cricket Auction Room&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1">&lt;link href="https://cdn.jsdelivr.net/npm/@fontsource/teko/index.css" rel="stylesheet"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;link href="https://cdn.jsdelivr.net/npm/@fontsource/barlow/index.css" rel="stylesheet"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;style&gt;</span></p>
+<p class="p1"><span class="s1">:root{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>--ink:#06101F; --panel:#0C1B30; --panel2:#102742; --line:rgba(245,197,24,.16);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>--gold:#F5C518; --gold2:#FFD84D; --red:#FF4136; --green:#2ECC71; --mute:#8FA3BF; --txt:#EAF1FB;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>--bat:#4DA3FF; --bowl:#FF6B5E; --ar:#C77DFF; --wk:#35D0BA;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">*{margin:0;padding:0;box-sizing:border-box}</span></p>
+<p class="p1"><span class="s1">html,body{height:100%}</span></p>
+<p class="p1"><span class="s1">body{font-family:'Barlow',sans-serif;background:var(--ink);color:var(--txt);overflow-x:hidden}</span></p>
+<p class="p1"><span class="s1">body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>background:radial-gradient(120% 90% at 50% -10%,rgba(245,197,24,.10),transparent 55%),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>radial-gradient(90% 70% at 100% 100%,rgba(46,155,230,.10),transparent 60%),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>radial-gradient(120% 120% at 50% 50%,transparent 55%,rgba(0,0,0,.65) 100%);}</span></p>
+<p class="p1"><span class="s1">#bg3d{position:fixed;inset:0;z-index:0;pointer-events:none}</span></p>
+<p class="p1"><span class="s1">.lightsweep{position:fixed;inset:0;z-index:0;pointer-events:none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>background:linear-gradient(105deg,transparent 38%,rgba(245,197,24,.05) 50%,transparent 62%);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>background-size:220% 100%;animation:pan 11s linear infinite}</span></p>
+<p class="p1"><span class="s1">@keyframes pan{to{background-position:-220% 0}}</span></p>
+<p class="p1"><span class="s1">#app{position:relative;z-index:2}</span></p>
+<p class="p1"><span class="s1">.lbl{font:600 11px/1 'Barlow';letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}</span></p>
+<p class="p1"><span class="s1">.corners{position:relative}</span></p>
+<p class="p1"><span class="s1">.corners::before,.corners::after{content:'';position:absolute;width:20px;height:20px;border:2px solid var(--gold);pointer-events:none;z-index:3}</span></p>
+<p class="p1"><span class="s1">.corners::before{top:-2px;left:-2px;border-right:none;border-bottom:none}</span></p>
+<p class="p1"><span class="s1">.corners::after{bottom:-2px;right:-2px;border-left:none;border-top:none}</span></p>
+<p class="p1"><span class="s1">.panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:6px}</span></p>
+<p class="p1"><span class="s1">button{font-family:'Barlow'}</span></p>
+<p class="p1"><span class="s1">.btn{font-family:'Teko';font-size:1.15rem;letter-spacing:.06em;text-transform:uppercase;border:none;cursor:pointer;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>padding:10px 22px;clip-path:polygon(9px 0,100% 0,calc(100% - 9px) 100%,0 100%);transition:.18s;display:inline-flex;align-items:center;gap:8px;justify-content:center}</span></p>
+<p class="p1"><span class="s1">.btn-gold{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#1a1200;font-weight:600}</span></p>
+<p class="p1"><span class="s1">.btn-gold:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,197,24,.35)}</span></p>
+<p class="p1"><span class="s1">.btn-ghost{background:rgba(245,197,24,.08);color:var(--gold);border:1px solid var(--gold);clip-path:none;border-radius:5px}</span></p>
+<p class="p1"><span class="s1">.btn-ghost:hover{background:rgba(245,197,24,.18)}</span></p>
+<p class="p1"><span class="s1">.btn-red{background:linear-gradient(180deg,#ff6b62,var(--red));color:#fff;font-weight:600}</span></p>
+<p class="p1"><span class="s1">.btn-green{background:linear-gradient(180deg,#46e08a,var(--green));color:#06210f;font-weight:600}</span></p>
+<p class="p1"><span class="s1">.btn-red:hover,.btn-green:hover{transform:translateY(-2px);filter:brightness(1.08)}</span></p>
+<p class="p1"><span class="s1">.btn:disabled{opacity:.32;cursor:not-allowed;transform:none;filter:none;box-shadow:none}</span></p>
+<p class="p1"><span class="s1">.btn-sm{padding:6px 14px;font-size:1rem}</span></p>
+<p class="p1"><span class="s1">input,select,textarea{font-family:'Barlow';background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:5px;color:#fff;padding:11px 13px;width:100%;font-size:.98rem}</span></p>
+<p class="p1"><span class="s1">input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,197,24,.12)}</span></p>
+<p class="p1"><span class="s1">select option{background:var(--panel)}</span></p>
+<p class="p1"><span class="s1">::-webkit-scrollbar{width:8px;height:8px}</span></p>
+<p class="p1"><span class="s1">::-webkit-scrollbar-thumb{background:rgba(245,197,24,.4);border-radius:4px}</span></p>
+<p class="p1"><span class="s1">::-webkit-scrollbar-track{background:transparent}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ---------- HEADER ---------- */</span></p>
+<p class="p1"><span class="s1">.hdr{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:18px;padding:12px 26px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>background:linear-gradient(180deg,rgba(8,18,34,.97),rgba(8,18,34,.82));backdrop-filter:blur(8px);border-bottom:2px solid var(--gold)}</span></p>
+<p class="p1"><span class="s1">.crest{width:46px;height:46px;display:grid;place-items:center;font-size:1.7rem;background:radial-gradient(circle at 30% 30%,var(--gold2),var(--gold));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);color:#1a1200;flex:none}</span></p>
+<p class="p1"><span class="s1">.brand .t{font-family:'Teko';font-size:1.9rem;letter-spacing:.04em;line-height:.9}</span></p>
+<p class="p1"><span class="s1">.brand .s{font-size:.7rem;letter-spacing:.22em;color:var(--mute);text-transform:uppercase}</span></p>
+<p class="p1"><span class="s1">.brand .s b{color:var(--red)}</span></p>
+<p class="p1"><span class="s1">.hdr .spacer{flex:1}</span></p>
+<p class="p1"><span class="s1">.hdr .right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}</span></p>
+<p class="p1"><span class="s1">.iconbtn{width:40px;height:40px;display:grid;place-items:center;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:6px;cursor:pointer;font-size:1.1rem;transition:.18s;color:#fff}</span></p>
+<p class="p1"><span class="s1">.iconbtn:hover{border-color:var(--gold);color:var(--gold)}</span></p>
+<p class="p1"><span class="s1">.uchip{display:flex;align-items:center;gap:8px;background:rgba(245,197,24,.1);border:1px solid var(--gold);border-radius:30px;padding:6px 14px;font-weight:600}</span></p>
+<p class="p1"><span class="s1">.uchip .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}</span></p>
+<p class="p1"><span class="s1">.syncwrap{display:flex;align-items:center;gap:7px;font:700 .62rem/1 'Barlow';letter-spacing:.18em;color:var(--mute);border:1px solid var(--line);border-radius:30px;padding:8px 12px}</span></p>
+<p class="p1"><span class="s1">.syncdot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:blink 2.2s infinite;flex:none}</span></p>
+<p class="p1"><span class="s1">.syncdot.pulse{animation:syncPulse .55s}</span></p>
+<p class="p1"><span class="s1">@keyframes syncPulse{0%{transform:scale(2.4);background:var(--gold);box-shadow:0 0 20px var(--gold)}100%{transform:scale(1)}}</span></p>
+<p class="p1"><span class="s1">@keyframes blink{50%{opacity:.3}}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ---------- NAV ---------- */</span></p>
+<p class="p1"><span class="s1">.nav{display:flex;gap:8px;padding:12px 26px;overflow-x:auto;border-bottom:1px solid rgba(255,255,255,.06);background:rgba(8,18,34,.5)}</span></p>
+<p class="p1"><span class="s1">.ntab{font-family:'Teko';font-size:1.25rem;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>padding:6px 20px;border-radius:5px;border:1px solid transparent;color:var(--mute);cursor:pointer;transition:.18s}</span></p>
+<p class="p1"><span class="s1">.ntab:hover{color:#fff}</span></p>
+<p class="p1"><span class="s1">.ntab.on{color:#1a1200;background:var(--gold);clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}</span></p>
+<p class="p1"><span class="s1">.main{padding:24px 26px 60px;max-width:1500px;margin:0 auto}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ---------- TICKER ---------- */</span></p>
+<p class="p1"><span class="s1">.ticker{display:flex;align-items:stretch;border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:22px;background:var(--panel)}</span></p>
+<p class="p1"><span class="s1">.ticker .tag{background:var(--red);color:#fff;font-family:'Teko';font-size:1.2rem;letter-spacing:.1em;padding:8px 16px;display:flex;align-items:center;transform:skewX(-9deg)}</span></p>
+<p class="p1"><span class="s1">.ticker .tag span{transform:skewX(9deg);display:flex;align-items:center;gap:8px}</span></p>
+<p class="p1"><span class="s1">.ticker .tag i{width:9px;height:9px;border-radius:50%;background:#fff;animation:blink 1s infinite}</span></p>
+<p class="p1"><span class="s1">.ticker .trackwrap{flex:1;overflow:hidden;display:flex;align-items:center}</span></p>
+<p class="p1"><span class="s1">.ticker .track{display:inline-flex;gap:34px;white-space:nowrap;padding-left:100%;animation:tick 32s linear infinite;font-size:.95rem}</span></p>
+<p class="p1"><span class="s1">.ticker .track b{color:var(--gold)}</span></p>
+<p class="p1"><span class="s1">.ticker .track .sep{color:var(--mute)}</span></p>
+<p class="p1"><span class="s1">@keyframes tick{to{transform:translateX(-100%)}}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ---------- AUCTION BLOCK ---------- */</span></p>
+<p class="p1"><span class="s1">.block{display:grid;grid-template-columns:minmax(280px,1fr) 1.15fr;gap:22px;margin-bottom:24px;animation:blockIn .5s cubic-bezier(.2,1.2,.4,1)}</span></p>
+<p class="p1"><span class="s1">@keyframes blockIn{from{opacity:0;transform:translateY(24px) scale(.98)}}</span></p>
+<p class="p1"><span class="s1">.ab-player{padding:26px;text-align:center}</span></p>
+<p class="p1"><span class="s1">.ab-player .photo{width:200px;height:200px;border-radius:50%;object-fit:cover;margin:0 auto 14px;border:4px solid var(--gold);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>box-shadow:0 0 0 6px rgba(245,197,24,.12),0 18px 40px rgba(0,0,0,.5);animation:floaty 5s ease-in-out infinite}</span></p>
+<p class="p1"><span class="s1">@keyframes floaty{50%{transform:translateY(-8px)}}</span></p>
+<p class="p1"><span class="s1">.ab-player .nm{font-family:'Teko';font-size:2.6rem;letter-spacing:.02em}</span></p>
+<p class="p1"><span class="s1">.chip{display:inline-block;font:700 .72rem/1 'Barlow';letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:30px;margin:4px 3px}</span></p>
+<p class="p1"><span class="s1">.chip.bat{background:rgba(77,163,255,.16);color:var(--bat);border:1px solid var(--bat)}</span></p>
+<p class="p1"><span class="s1">.chip.bowl{background:rgba(255,107,94,.16);color:var(--bowl);border:1px solid var(--bowl)}</span></p>
+<p class="p1"><span class="s1">.chip.ar{background:rgba(199,125,255,.16);color:var(--ar);border:1px solid var(--ar)}</span></p>
+<p class="p1"><span class="s1">.chip.wk{background:rgba(53,208,186,.16);color:var(--wk);border:1px solid var(--wk)}</span></p>
+<p class="p1"><span class="s1">.pf{color:var(--mute);font-style:italic;font-size:.92rem;max-width:340px;margin:12px auto 0;line-height:1.5}</span></p>
+<p class="p1"><span class="s1">.base{margin-top:14px;font-family:'Teko';font-size:1.4rem;color:var(--mute)}</span></p>
+<p class="p1"><span class="s1">.base b{color:#fff}</span></p>
+<p class="p1"><span class="s1">.ab-bid{padding:26px;display:flex;flex-direction:column}</span></p>
+<p class="p1"><span class="s1">.bidrow{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;border-bottom:1px dashed var(--line);padding-bottom:16px}</span></p>
+<p class="p1"><span class="s1">.bidnow .num{font-family:'Teko';font-weight:600;color:var(--gold);font-size:clamp(58px,8vw,108px);line-height:.85;text-shadow:0 0 30px rgba(245,197,24,.4)}</span></p>
+<p class="p1"><span class="s1">.bidnow .num.pop{animation:bidPop .4s}</span></p>
+<p class="p1"><span class="s1">@keyframes bidPop{0%{transform:scale(1.22);color:#fff}100%{transform:scale(1)}}</span></p>
+<p class="p1"><span class="s1">.bidnow .await{font-family:'Teko';font-size:2.4rem;color:var(--mute);line-height:1}</span></p>
+<p class="p1"><span class="s1">.leadbox{text-align:right}</span></p>
+<p class="p1"><span class="s1">.leadbox .lbl{margin-bottom:6px}</span></p>
+<p class="p1"><span class="s1">.leadbox .who{font-family:'Teko';font-size:1.9rem;display:flex;align-items:center;gap:8px;justify-content:flex-end}</span></p>
+<p class="p1"><span class="s1">.leadbox .who .sw{width:14px;height:14px;border-radius:3px;flex:none}</span></p>
+<p class="p1"><span class="s1">.leadbox .none{color:var(--mute);font-family:'Teko';font-size:1.6rem}</span></p>
+<p class="p1"><span class="s1">.ladder-lbl{margin:18px 0 8px}</span></p>
+<p class="p1"><span class="s1">.tchips{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:8px}</span></p>
+<p class="p1"><span class="s1">.tchip{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:6px;padding:9px 8px 9px 12px;cursor:pointer;transition:.16s;text-align:left;position:relative;overflow:hidden;color:#fff}</span></p>
+<p class="p1"><span class="s1">.tchip::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--tc)}</span></p>
+<p class="p1"><span class="s1">.tchip:hover{border-color:var(--gold)}</span></p>
+<p class="p1"><span class="s1">.tchip.sel{border-color:var(--gold);background:rgba(245,197,24,.12);box-shadow:0 0 0 1px var(--gold) inset}</span></p>
+<p class="p1"><span class="s1">.tchip:disabled{opacity:.3;cursor:not-allowed}</span></p>
+<p class="p1"><span class="s1">.tchip .n{font-weight:700;font-size:.92rem;display:flex;align-items:center;gap:6px}</span></p>
+<p class="p1"><span class="s1">.tchip .n .sw{width:10px;height:10px;border-radius:3px;flex:none}</span></p>
+<p class="p1"><span class="s1">.tchip .p{font-family:'Teko';font-size:1.15rem;color:var(--gold);line-height:1}</span></p>
+<p class="p1"><span class="s1">.tchip .ld{position:absolute;top:6px;right:6px;font-size:.55rem;background:var(--green);color:#06210f;padding:2px 6px;border-radius:3px;font-weight:700;letter-spacing:.08em}</span></p>
+<p class="p1"><span class="s1">.ladder{display:flex;flex-wrap:wrap;gap:9px;margin-top:6px}</span></p>
+<p class="p1"><span class="s1">.lbtn{font-family:'Teko';font-size:1.35rem;letter-spacing:.03em;padding:8px 18px;border-radius:6px;cursor:pointer;transition:.15s;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>background:linear-gradient(180deg,rgba(245,197,24,.18),rgba(245,197,24,.06));border:1px solid var(--gold);color:var(--gold2)}</span></p>
+<p class="p1"><span class="s1">.lbtn:hover{background:var(--gold);color:#1a1200;transform:translateY(-2px)}</span></p>
+<p class="p1"><span class="s1">.lbtn small{display:block;font-family:'Barlow';font-size:.6rem;letter-spacing:.1em;opacity:.7}</span></p>
+<p class="p1"><span class="s1">.lbtn:disabled{opacity:.3;cursor:not-allowed;transform:none}</span></p>
+<p class="p1"><span class="s1">.custom{display:flex;gap:8px;margin-top:10px}</span></p>
+<p class="p1"><span class="s1">.custom input{flex:1}</span></p>
+<p class="p1"><span class="s1">.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:18px}</span></p>
+<p class="p1"><span class="s1">.actions .btn{flex:1;min-width:130px}</span></p>
+<p class="p1"><span class="s1">.hint{margin-top:14px;font-size:.82rem;color:var(--mute);text-align:center}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ---------- NEXT UP ---------- */</span></p>
+<p class="p1"><span class="s1">.nextup{margin-bottom:24px}</span></p>
+<p class="p1"><span class="s1">.section-h{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:14px;flex-wrap:wrap}</span></p>
+<p class="p1"><span class="s1">.section-h h2{font-family:'Teko';font-size:2rem;letter-spacing:.03em;display:flex;align-items:center;gap:10px}</span></p>
+<p class="p1"><span class="s1">.section-h h2 .em{font-size:1.4rem}</span></p>
+<p class="p1"><span class="s1">.section-h .ct{font-family:'Teko';font-size:1.3rem;color:var(--gold)}</span></p>
+<p class="p1"><span class="s1">.poolgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}</span></p>
+<p class="p1"><span class="s1">.pcard{position:relative;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:6px;padding:16px;text-align:center;transition:.18s;cursor:pointer;overflow:hidden}</span></p>
+<p class="p1"><span class="s1">.pcard:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 14px 30px rgba(0,0,0,.4)}</span></p>
+<p class="p1"><span class="s1">.pcard img{width:88px;height:88px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);margin-bottom:8px}</span></p>
+<p class="p1"><span class="s1">.pcard .nm{font-family:'Teko';font-size:1.4rem;line-height:1}</span></p>
+<p class="p1"><span class="s1">.pcard .bp{font-family:'Teko';font-size:1.2rem;color:var(--gold);margin-top:4px}</span></p>
+<p class="p1"><span class="s1">.ribbon{position:absolute;top:9px;right:-30px;transform:rotate(40deg);font:700 .62rem/1 'Barlow';letter-spacing:.12em;padding:4px 34px;text-transform:uppercase}</span></p>
+<p class="p1"><span class="s1">.ribbon.sold{background:var(--green);color:#06210f}</span></p>
+<p class="p1"><span class="s1">.ribbon.unsold{background:#5b6b80;color:#fff}</span></p>
+<p class="p1"><span class="s1">.ribbon.pool{background:var(--bat);color:#04121f}</span></p>
+<p class="p1"><span class="s1">.ribbon.lock{background:var(--red);color:#fff}</span></p>
+<p class="p1"><span class="s1">.pcard.dim{opacity:.6}</span></p>
+<p class="p1"><span class="s1">.pcard.dim:hover{transform:none;cursor:default;border-color:var(--line);box-shadow:none}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ---------- PURSE BOARD ---------- */</span></p>
+<p class="p1"><span class="s1">.purse{margin-top:8px}</span></p>
+<p class="p1"><span class="s1">.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}</span></p>
+<p class="p1"><span class="s1">.tcard{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:6px;overflow:hidden;position:relative;transition:.18s}</span></p>
+<p class="p1"><span class="s1">.tcard:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(0,0,0,.4)}</span></p>
+<p class="p1"><span class="s1">.tcard .stripe{height:5px;background:var(--tc)}</span></p>
+<p class="p1"><span class="s1">.tcard .body{padding:14px 16px}</span></p>
+<p class="p1"><span class="s1">.tcard .top{display:flex;align-items:center;justify-content:space-between;gap:8px}</span></p>
+<p class="p1"><span class="s1">.tcard .tn{font-family:'Teko';font-size:1.45rem;line-height:1;display:flex;align-items:center;gap:8px}</span></p>
+<p class="p1"><span class="s1">.tcard .tn .sw{width:12px;height:12px;border-radius:3px;background:var(--tc);flex:none}</span></p>
+<p class="p1"><span class="s1">.tcard .ld{font:700 .6rem/1 'Barlow';letter-spacing:.1em;background:var(--green);color:#06210f;padding:4px 8px;border-radius:3px;animation:blink 1.4s infinite}</span></p>
+<p class="p1"><span class="s1">.tcard .rem{font-family:'Teko';font-size:2.3rem;color:var(--gold);line-height:.9;margin:4px 0 2px}</span></p>
+<p class="p1"><span class="s1">.tcard .bar{height:7px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden;margin:8px 0}</span></p>
+<p class="p1"><span class="s1">.tcard .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--tc),var(--gold));transition:width .6s}</span></p>
+<p class="p1"><span class="s1">.tcard .meta{display:flex;justify-content:space-between;font-size:.78rem;color:var(--mute)}</span></p>
+<p class="p1"><span class="s1">.tcard .meta b{color:#fff}</span></p>
+<p class="p1"><span class="s1">.squad{margin-top:10px;max-height:170px;overflow-y:auto;display:flex;flex-direction:column;gap:5px}</span></p>
+<p class="p1"><span class="s1">.sq{display:flex;align-items:center;justify-content:space-between;gap:8px;background:rgba(255,255,255,.04);border-radius:5px;padding:6px 9px;font-size:.86rem}</span></p>
+<p class="p1"><span class="s1">.sq .l{display:flex;align-items:center;gap:7px;min-width:0}</span></p>
+<p class="p1"><span class="s1">.sq .l img{width:24px;height:24px;border-radius:50%;object-fit:cover;border:1px solid var(--gold);flex:none}</span></p>
+<p class="p1"><span class="s1">.sq .l span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}</span></p>
+<p class="p1"><span class="s1">.sq .pr{font-family:'Teko';font-size:1.1rem;color:var(--gold);flex:none}</span></p>
+<p class="p1"><span class="s1">.squad .empty{color:#5b6b80;font-size:.82rem;text-align:center;padding:8px}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ---------- STATS ---------- */</span></p>
+<p class="p1"><span class="s1">.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:22px}</span></p>
+<p class="p1"><span class="s1">.stat{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:6px;padding:16px;text-align:center;position:relative;overflow:hidden}</span></p>
+<p class="p1"><span class="s1">.stat::after{content:'';position:absolute;inset:0;background:radial-gradient(120% 100% at 50% 0,rgba(245,197,24,.08),transparent 70%)}</span></p>
+<p class="p1"><span class="s1">.stat .v{font-family:'Teko';font-size:2.4rem;color:var(--gold);line-height:.9;position:relative}</span></p>
+<p class="p1"><span class="s1">.stat .v.g{color:var(--green)}.stat .v.r{color:var(--red)}.stat .v.b{color:var(--bat)}</span></p>
+<p class="p1"><span class="s1">.stat .l{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-top:4px;position:relative}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ---------- LOGIN ---------- */</span></p>
+<p class="p1"><span class="s1">.login{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch}</span></p>
+<p class="p1"><span class="s1">.login .left{position:relative;overflow:hidden;display:flex;flex-direction:column;padding:40px;border-right:1px solid var(--line)}</span></p>
+<p class="p1"><span class="s1">.login .left .bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.55) saturate(1.1)}</span></p>
+<p class="p1"><span class="s1">.login .left .bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,16,31,.4),rgba(6,16,31,.92))}</span></p>
+<p class="p1"><span class="s1">.login .left .inner{position:relative;z-index:2;display:flex;flex-direction:column;height:100%;justify-content:space-between;gap:30px}</span></p>
+<p class="p1"><span class="s1">.login .left .kicker{font:700 .8rem/1 'Barlow';letter-spacing:.3em;color:var(--gold);text-transform:uppercase}</span></p>
+<p class="p1"><span class="s1">.login .left h1{font-family:'Teko';font-size:clamp(3rem,7vw,6rem);line-height:.85;letter-spacing:.01em}</span></p>
+<p class="p1"><span class="s1">.login .left h1 em{color:var(--gold);font-style:normal}</span></p>
+<p class="p1"><span class="s1">.callout{font-family:'Teko';font-size:clamp(2rem,5vw,3.4rem);letter-spacing:.06em;min-height:1.1em}</span></p>
+<p class="p1"><span class="s1">.callout .w{display:inline-block;animation:stampWord .5s}</span></p>
+<p class="p1"><span class="s1">@keyframes stampWord{0%{transform:scale(1.4);opacity:0}100%{transform:scale(1);opacity:1}}</span></p>
+<p class="p1"><span class="s1">.callout .w.once{color:#fff}.callout .w.twice{color:var(--gold2)}.callout .w.soldw{color:var(--green)}</span></p>
+<p class="p1"><span class="s1">.ministats{display:flex;gap:26px;flex-wrap:wrap}</span></p>
+<p class="p1"><span class="s1">.ministats .m .v{font-family:'Teko';font-size:2rem;color:var(--gold);line-height:1}</span></p>
+<p class="p1"><span class="s1">.ministats .m .l{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}</span></p>
+<p class="p1"><span class="s1">.login .marq{position:relative;z-index:2;overflow:hidden;border-top:1px solid var(--line);padding-top:12px}</span></p>
+<p class="p1"><span class="s1">.login .marq .track{display:inline-flex;gap:24px;white-space:nowrap;animation:tick 26s linear infinite;font-family:'Teko';font-size:1.3rem;letter-spacing:.05em;color:var(--mute)}</span></p>
+<p class="p1"><span class="s1">.login .marq .track b{color:var(--gold)}</span></p>
+<p class="p1"><span class="s1">.login .right{display:flex;align-items:center;justify-content:center;padding:40px;overflow-y:auto}</span></p>
+<p class="p1"><span class="s1">.logbox{width:100%;max-width:460px}</span></p>
+<p class="p1"><span class="s1">.logbox h2{font-family:'Teko';font-size:2.4rem;letter-spacing:.03em}</span></p>
+<p class="p1"><span class="s1">.logbox .sub{color:var(--mute);margin-bottom:20px}</span></p>
+<p class="p1"><span class="s1">.tabs{display:flex;gap:8px;margin-bottom:20px}</span></p>
+<p class="p1"><span class="s1">.tab{flex:1;text-align:center;font-family:'Teko';font-size:1.3rem;letter-spacing:.05em;padding:9px;border-radius:5px;border:1px solid var(--line);color:var(--mute);cursor:pointer;transition:.18s}</span></p>
+<p class="p1"><span class="s1">.tab.on{background:rgba(245,197,24,.14);border-color:var(--gold);color:var(--gold)}</span></p>
+<p class="p1"><span class="s1">.fg{margin-bottom:14px}</span></p>
+<p class="p1"><span class="s1">.fg label{display:block;margin-bottom:6px}</span></p>
+<p class="p1"><span class="s1">.creds{margin-top:22px;border:1px solid var(--line);border-radius:6px;padding:14px;background:rgba(255,255,255,.02)}</span></p>
+<p class="p1"><span class="s1">.creds h4{font-family:'Teko';font-size:1.3rem;letter-spacing:.05em;color:var(--gold);margin-bottom:10px}</span></p>
+<p class="p1"><span class="s1">.crow{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px dashed rgba(255,255,255,.07);font-size:.88rem}</span></p>
+<p class="p1"><span class="s1">.crow:last-child{border-bottom:none}</span></p>
+<p class="p1"><span class="s1">.crow .role{font:700 .6rem/1 'Barlow';letter-spacing:.1em;padding:3px 7px;border-radius:3px;flex:none}</span></p>
+<p class="p1"><span class="s1">.crow .role.ad{background:var(--gold);color:#1a1200}</span></p>
+<p class="p1"><span class="s1">.crow .role.tm{background:rgba(77,163,255,.2);color:var(--bat);border:1px solid var(--bat)}</span></p>
+<p class="p1"><span class="s1">.crow .nm{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}</span></p>
+<p class="p1"><span class="s1">.crow .pw{font-family:'Teko';font-size:1.1rem;color:var(--gold);letter-spacing:.05em}</span></p>
+<p class="p1"><span class="s1">.crow .use{font-size:.7rem;background:rgba(245,197,24,.12);border:1px solid var(--gold);color:var(--gold);border-radius:4px;padding:3px 9px;cursor:pointer;flex:none;font-weight:700}</span></p>
+<p class="p1"><span class="s1">.crow .use:hover{background:var(--gold);color:#1a1200}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ---------- MODAL ---------- */</span></p>
+<p class="p1"><span class="s1">.ov{position:fixed;inset:0;z-index:200;background:rgba(3,8,18,.82);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:20px;animation:fade .25s}</span></p>
+<p class="p1"><span class="s1">@keyframes fade{from{opacity:0}}</span></p>
+<p class="p1"><span class="s1">.modal{width:100%;max-width:560px;max-height:92vh;overflow-y:auto;background:linear-gradient(180deg,var(--panel2),var(--panel));border:2px solid var(--gold);border-radius:8px;padding:26px;animation:pop .3s cubic-bezier(.2,1.4,.4,1)}</span></p>
+<p class="p1"><span class="s1">@keyframes pop{from{transform:scale(.9);opacity:0}}</span></p>
+<p class="p1"><span class="s1">.modal h3{font-family:'Teko';font-size:1.9rem;letter-spacing:.03em;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px}</span></p>
+<p class="p1"><span class="s1">.modal .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}</span></p>
+<p class="p1"><span class="s1">.phpick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:6px}</span></p>
+<p class="p1"><span class="s1">.phpick label{cursor:pointer;position:relative}</span></p>
+<p class="p1"><span class="s1">.phpick img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px;border:2px solid var(--line);transition:.15s}</span></p>
+<p class="p1"><span class="s1">.phpick input{display:none}</span></p>
+<p class="p1"><span class="s1">.phpick input:checked+img{border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,197,24,.3)}</span></p>
+<p class="p1"><span class="s1">.modal .acts{display:flex;gap:10px;justify-content:flex-end;margin-top:20px;flex-wrap:wrap}</span></p>
+<p class="p1"><span class="s1">.quick{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}</span></p>
+<p class="p1"><span class="s1">.qbtn{font-family:'Teko';font-size:1.1rem;padding:5px 12px;border-radius:5px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:#fff;cursor:pointer}</span></p>
+<p class="p1"><span class="s1">.qbtn:hover{border-color:var(--gold);color:var(--gold)}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ---------- SOLD / UNSOLD OVERLAY ---------- */</span></p>
+<p class="p1"><span class="s1">.soldov{position:fixed;inset:0;z-index:300;background:radial-gradient(circle at 50% 40%,rgba(8,18,34,.9),rgba(3,8,18,.97));display:flex;align-items:center;justify-content:center;padding:20px}</span></p>
+<p class="p1"><span class="s1">.soldov .sc{text-align:center;max-width:640px}</span></p>
+<p class="p1"><span class="s1">.soldov .stamp{font-family:'Teko';font-weight:600;font-size:clamp(70px,16vw,180px);line-height:.8;display:inline-block;animation:stampIn .55s cubic-bezier(.2,2,.4,1)}</span></p>
+<p class="p1"><span class="s1">.soldov .stamp.s{color:var(--green);text-shadow:0 0 50px rgba(46,204,113,.5)}</span></p>
+<p class="p1"><span class="s1">.soldov .stamp.u{color:#7e8ca0;text-shadow:0 0 40px rgba(126,140,160,.4)}</span></p>
+<p class="p1"><span class="s1">@keyframes stampIn{0%{transform:scale(2.8) rotate(-14deg);opacity:0}60%{transform:scale(.94) rotate(-7deg);opacity:1}100%{transform:scale(1) rotate(-7deg)}}</span></p>
+<p class="p1"><span class="s1">.soldov .gavel{font-size:3.4rem;display:inline-block;animation:gavelSwing 1s ease;margin-bottom:6px}</span></p>
+<p class="p1"><span class="s1">@keyframes gavelSwing{0%,100%{transform:rotate(0)}25%{transform:rotate(-40deg)}50%{transform:rotate(14deg)}70%{transform:rotate(-6deg)}}</span></p>
+<p class="p1"><span class="s1">.soldov .who{display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0;flex-wrap:wrap}</span></p>
+<p class="p1"><span class="s1">.soldov .who img{width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid var(--gold)}</span></p>
+<p class="p1"><span class="s1">.soldov .who .nm{font-family:'Teko';font-size:2.2rem}</span></p>
+<p class="p1"><span class="s1">.soldov .to{font-family:'Teko';font-size:1.8rem;display:flex;align-items:center;gap:8px;justify-content:center;flex-wrap:wrap}</span></p>
+<p class="p1"><span class="s1">.soldov .to .sw{width:16px;height:16px;border-radius:3px;flex:none}</span></p>
+<p class="p1"><span class="s1">.soldov .price{font-family:'Teko';font-size:clamp(2.6rem,8vw,4.4rem);color:var(--gold);line-height:.9;margin:6px 0}</span></p>
+<p class="p1"><span class="s1">.soldov .purseleft{font-family:'Teko';font-size:1.5rem;color:var(--green)}</span></p>
+<p class="p1"><span class="s1">.soldov .purseleft b{color:#fff}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ---------- LEDGER ---------- */</span></p>
+<p class="p1"><span class="s1">.ledg-sec{margin-bottom:30px}</span></p>
+<p class="p1"><span class="s1">.ledg-sec h3{font-family:'Teko';font-size:1.7rem;letter-spacing:.04em;margin-bottom:12px;display:flex;align-items:center;gap:10px}</span></p>
+<p class="p1"><span class="s1">.ledg-sec h3 .pill{font-family:'Barlow';font-size:.7rem;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.1em}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ---------- TOOLBAR ---------- */</span></p>
+<p class="p1"><span class="s1">.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}</span></p>
+<p class="p1"><span class="s1">.toolbar input,.toolbar select{width:auto;min-width:150px}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ---------- REVEAL ---------- */</span></p>
+<p class="p1"><span class="s1">.rv{opacity:0;transform:translateY(16px);transition:.6s cubic-bezier(.2,.7,.3,1)}</span></p>
+<p class="p1"><span class="s1">.rv.in{opacity:1;transform:none}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ---------- NOTIF ---------- */</span></p>
+<p class="p1"><span class="s1">.notif{position:fixed;top:78px;right:20px;z-index:400;padding:13px 20px;border-radius:6px;font-weight:600;max-width:360px;animation:slideIn .3s;border-left:4px solid}</span></p>
+<p class="p1"><span class="s1">@keyframes slideIn{from{transform:translateX(120%);opacity:0}}</span></p>
+<p class="p1"><span class="s1">.notif.ok{background:rgba(46,204,113,.95);color:#06210f;border-color:#06210f}</span></p>
+<p class="p1"><span class="s1">.notif.err{background:rgba(255,65,54,.95);color:#fff;border-color:#7a0d06}</span></p>
+<p class="p1"><span class="s1">.notif.info{background:rgba(46,155,230,.95);color:#fff;border-color:#0a3a63}</span></p>
+<p class="p1"><span class="s1">.confetti{position:fixed;top:-20px;z-index:350;width:10px;height:14px;pointer-events:none;animation:fall linear forwards}</span></p>
+<p class="p1"><span class="s1">@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.2}}</span></p>
+<p class="p1"><span class="s1">.empty{text-align:center;color:#5b6b80;padding:40px 20px}</span></p>
+<p class="p1"><span class="s1">.empty .e{font-size:2.4rem;margin-bottom:8px}</span></p>
+<p class="p1"><span class="s1">.empty h4{font-family:'Teko';font-size:1.6rem;color:var(--mute);letter-spacing:.04em}</span></p>
+<p class="p1"><span class="s1">.waitcard{padding:34px;text-align:center}</span></p>
+<p class="p1"><span class="s1">.waitcard .big{font-size:3rem;animation:floaty 3s ease-in-out infinite;display:inline-block}</span></p>
+<p class="p1"><span class="s1">.waitcard h2{font-family:'Teko';font-size:2.2rem;letter-spacing:.03em;margin:6px 0}</span></p>
+<p class="p1"><span class="s1">.livesync{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:.8rem;color:var(--mute);border:1px dashed var(--line);border-radius:30px;padding:7px 14px}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">@media(max-width:980px){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.login{grid-template-columns:1fr}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.login .left{min-height:300px;border-right:none;border-bottom:1px solid var(--line)}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.block{grid-template-columns:1fr}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.leadbox{text-align:left}.leadbox .who{justify-content:flex-start}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.hdr{padding:10px 14px;gap:10px}.main{padding:18px 14px 50px}.nav{padding:10px 14px}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.brand .t{font-size:1.4rem}.syncwrap{display:none}</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;canvas id="bg3d"&gt;&lt;/canvas&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="lightsweep"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div id="app"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;script&gt;</span></p>
+<p class="p1"><span class="s1">/* ============================ 3D STADIUM BACKGROUND ============================ */</span></p>
+<p class="p1"><span class="s1">(function(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const cv=document.getElementById('bg3d');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const scene=new THREE.Scene();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const cam=new THREE.PerspectiveCamera(70,innerWidth/innerHeight,0.1,1000);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const r=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>r.setSize(innerWidth,innerHeight);r.setPixelRatio(Math.min(devicePixelRatio,2));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const grp=new THREE.Group();scene.add(grp);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const ball=new THREE.Mesh(new THREE.SphereGeometry(1.5,40,40),new THREE.MeshPhongMaterial({color:0xB3202A,shininess:90,specular:0x552222}));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>grp.add(ball);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const seam=new THREE.Mesh(new THREE.TorusGeometry(1.5,0.05,10,80),new THREE.MeshPhongMaterial({color:0xf2ead8}));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>seam.rotation.x=Math.PI/2;grp.add(seam);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const seam2=new THREE.Mesh(new THREE.TorusGeometry(1.5,0.045,8,80),new THREE.MeshPhongMaterial({color:0xf2ead8,transparent:true,opacity:.5}));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>seam2.rotation.x=Math.PI/2;seam2.rotation.z=0.18;grp.add(seam2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>grp.position.set(0,-0.4,-9);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const N=380,pos=new Float32Array(N*3);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>for(let i=0;i&lt;N*3;i++)pos[i]=(Math.random()-0.5)*46;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pos,3));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const dust=new THREE.Points(pg,new THREE.PointsMaterial({size:0.07,color:0xF5C518,transparent:true,opacity:0.55}));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>scene.add(dust);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function flood(x,z,rot){const c=new THREE.Mesh(new THREE.ConeGeometry(5,13,28,1,true),new THREE.MeshBasicMaterial({color:0xF5C518,transparent:true,opacity:0.045,side:THREE.DoubleSide,blending:THREE.AdditiveBlending,depthWrite:false}));c.position.set(x,7,z);c.rotation.z=rot;scene.add(c);}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>flood(-9,-7,0.55);flood(9,-7,-0.55);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>scene.add(new THREE.AmbientLight(0x445577,0.6));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const l1=new THREE.PointLight(0xF5C518,1.3,60);l1.position.set(6,6,6);scene.add(l1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const l2=new THREE.PointLight(0x2E9BE6,0.8,60);l2.position.set(-6,-4,4);scene.add(l2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>cam.position.z=14;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>let mx=0,my=0;addEventListener('mousemove',e=&gt;{mx=(e.clientX/innerWidth-0.5)*2;my=(e.clientY/innerHeight-0.5)*2;});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>(function loop(){requestAnimationFrame(loop);const t=Date.now()*0.001;grp.rotation.y+=0.012;grp.rotation.x+=0.004;grp.position.y=-0.4+Math.sin(t)*0.5;dust.rotation.y+=0.0006;cam.position.x+=(mx*1.6-cam.position.x)*0.03;cam.position.y+=(-my*1.2-cam.position.y)*0.03;cam.lookAt(0,0,-6);r.render(scene,cam);})();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>addEventListener('resize',()=&gt;{cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();r.setSize(innerWidth,innerHeight);});</span></p>
+<p class="p1"><span class="s1">})();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ============================ IMAGES ============================ */</span></p>
+<p class="p1"><span class="s1">const IMG={</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>bat:'https://image.qwenlm.ai/public_source/7fbb715f-4500-4305-8399-4f8c6ec5690f/19d7fbec3-fe96-4faa-b04f-7a310f34b590.png',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>bowl:'https://image.qwenlm.ai/public_source/7fbb715f-4500-4305-8399-4f8c6ec5690f/11512b9cc-a75c-4ae3-b8f7-364de3bf67a8.png',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ar:'https://image.qwenlm.ai/public_source/7fbb715f-4500-4305-8399-4f8c6ec5690f/11c678b04-6e1b-4c64-880a-e2e0ac148e7c.png',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>wk:'https://image.qwenlm.ai/public_source/7fbb715f-4500-4305-8399-4f8c6ec5690f/16391534c-90ee-42f6-b33f-6a2a2d0ec6f4.png',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>gavel:'https://image.qwenlm.ai/public_source/7fbb715f-4500-4305-8399-4f8c6ec5690f/1eb0af53f-145b-4e65-9b62-1d347733ae77.png'</span></p>
+<p class="p1"><span class="s1">};</span></p>
+<p class="p1"><span class="s1">const PHOTOS=[IMG.bat,IMG.bowl,IMG.ar,IMG.wk];</span></p>
+<p class="p1"><span class="s1">function avatar(name,color){const i=(name||'?').trim().split(/\s+/).map(w=&gt;w[0]).slice(0,2).join('').toUpperCase();const c=color||'#F5C518';const svg=`&lt;svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'&gt;&lt;rect width='200' height='200' fill='${c}'/&gt;&lt;text x='50%' y='54%' font-family='Teko,Arial' font-size='92' fill='#0a1322' text-anchor='middle' dominant-baseline='middle' font-weight='700'&gt;${i}&lt;/text&gt;&lt;/svg&gt;`;return 'data:image/svg+xml;utf8,'+encodeURIComponent(svg);}</span></p>
+<p class="p1"><span class="s1">function imgTag(src,name,color,cls){return `&lt;img class="${cls||''}" src="${src}" alt="${(name||'').replace(/"/g,'')}" onerror="this.onerror=null;this.src=avatar('${(name||'').replace(/'/g,'')}','${color||'#F5C518'}')"&gt;`;}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ============================ DATA ============================ */</span></p>
+<p class="p1"><span class="s1">const K={t:'ipl27_teams',p:'ipl27_players',a:'ipl27_auction',s:'ipl27_sound'};</span></p>
+<p class="p1"><span class="s1">const DEF_TEAMS=[</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'t1',name:'Mumbai Indians',short:'MI',color:'#1E6FBA',budget:1e9,pass:'mi123'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'t2',name:'Chennai Super Kings',short:'CSK',color:'#F7C948',budget:1e9,pass:'csk123'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'t3',name:'Royal Challengers Bengaluru',short:'RCB',color:'#C8102E',budget:1e9,pass:'rcb123'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'t4',name:'Kolkata Knight Riders',short:'KKR',color:'#6C4AB0',budget:1e9,pass:'kkr123'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'t5',name:'Delhi Capitals',short:'DC',color:'#2E9BE6',budget:1e9,pass:'dc123'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'t6',name:'Rajasthan Royals',short:'RR',color:'#E5549B',budget:1e9,pass:'rr123'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'t7',name:'Punjab Kings',short:'PBKS',color:'#D64541',budget:1e9,pass:'pbks123'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'t8',name:'Sunrisers Hyderabad',short:'SRH',color:'#F2842B',budget:1e9,pass:'srh123'}</span></p>
+<p class="p1"><span class="s1">];</span></p>
+<p class="p1"><span class="s1">const DEF_PLAYERS=[</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'p1',name:'Arjun Verma',cat:'Batsman',base:20000000,img:IMG.bat,pf:'Silk-timed top-order bat. 4100+ T20 runs @ 142 SR. Anchors or accelerates on demand.'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'p2',name:'Kabir Khan',cat:'Bowler',base:15000000,img:IMG.bowl,pf:'Left-arm express pace, 145kph+. Lethal new-ball swing and toe-crushing yorkers.'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'p3',name:'Dev Rathee',cat:'All-Rounder',base:10000000,img:IMG.ar,pf:'Power-hitting No.4 who rolls the arm over for 4 tidy overs of off-spin.'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'p4',name:'Rishi Menon',cat:'Wicket-Keeper',base:7500000,img:IMG.wk,pf:'Glove work like silk, bat like a buzzsaw. Finishes games from No.5.'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'p5',name:'Vikram Rao',cat:'Batsman',base:12000000,img:IMG.bat,pf:'360° stroke-maker. Reads spin early, sweeps everything in his arc.'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'p6',name:'Sameer Joshi',cat:'Bowler',base:6000000,img:IMG.bowl,pf:'Mystery wrist-spinner. Googly you cannot pick, economy under 7.'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'p7',name:'Aditya Bhatt',cat:'All-Rounder',base:25000000,img:IMG.ar,pf:'The franchise player. Opens the batting, bowls seam, fields like a panther.'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'p8',name:'Nikhil Saini',cat:'Wicket-Keeper',base:5000000,img:IMG.wk,pf:'Lightning behind the stumps, 30+ stumpings a season. Handy lower-order hits.'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'p9',name:'Farhan Sheikh',cat:'Batsman',base:8000000,img:IMG.bat,pf:'Explosive opener. 6 Powerplay overs = 60 runs, no apology.'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'p10',name:'Manav Thakur',cat:'Bowler',base:10000000,img:IMG.bowl,pf:'Death-overs assassin. Slower balls and wide yorkers that freeze batters.'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'p11',name:'Karan Pillai',cat:'All-Rounder',base:7000000,img:IMG.ar,pf:'Left-handed disruptor with bat, tidy left-arm medium with the ball.'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'p12',name:'Sagar Naik',cat:'Batsman',base:4000000,img:IMG.bat,pf:'Young gun from the domestic circuit. Classical technique, modern intent.'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'p13',name:'Ishaan Bose',cat:'Bowler',base:5500000,img:IMG.bowl,pf:'Chinaman bowler — a rare weapon that turns the game on its head.'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>{id:'p14',name:'Rohan Das',cat:'Wicket-Keeper',base:6500000,img:IMG.wk,pf:'Calm head, clean hands. A keeper-batter who grows into the innings.'}</span></p>
+<p class="p1"><span class="s1">];</span></p>
+<p class="p1"><span class="s1">function load(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):JSON.parse(JSON.stringify(d));}catch(e){return JSON.parse(JSON.stringify(d));}}</span></p>
+<p class="p1"><span class="s1">function save(k,v){localStorage.setItem(k,JSON.stringify(v));}</span></p>
+<p class="p1"><span class="s1">let teams=load(K.t,DEF_TEAMS);</span></p>
+<p class="p1"><span class="s1">let players=load(K.p,DEF_PLAYERS);</span></p>
+<p class="p1"><span class="s1">let A=load(K.a,{pid:null,bid:0,lead:null,status:'idle',history:[]});</span></p>
+<p class="p1"><span class="s1">let soundOn=load(K.s,true);</span></p>
+<p class="p1"><span class="s1">let session=null;</span></p>
+<p class="p1"><span class="s1">let view='room';</span></p>
+<p class="p1"><span class="s1">let selTeam=null;</span></p>
+<p class="p1"><span class="s1">let loginRole='admin';</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ============================ REAL-TIME SYNC ENGINE ============================</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">   </span>Triple-layer sync so team owners ALWAYS see the block the moment admin opens it:</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">   </span>1) BroadcastChannel — instant push to all open tabs/windows</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">   </span>2) storage events<span class="Apple-converted-space">  </span>— fires across tabs whenever localStorage changes</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">   </span>3) fast polling<span class="Apple-converted-space">    </span>— 800ms safety net (works even on file:// quirks)<span class="Apple-converted-space">        </span>*/</span></p>
+<p class="p1"><span class="s1">const TAB_ID=Math.random().toString(36).slice(2);</span></p>
+<p class="p1"><span class="s1">const BC=('BroadcastChannel' in window)?new BroadcastChannel('ipl27_sync'):null;</span></p>
+<p class="p1"><span class="s1">let pendingRender=false;</span></p>
+<p class="p1"><span class="s1">function broadcast(m){if(BC){m.src=TAB_ID;try{BC.postMessage(m);}catch(e){}}}</span></p>
+<p class="p1"><span class="s1">if(BC){BC.onmessage=e=&gt;{const m=e.data;if(!m||m.src===TAB_ID)return;handleRemote(m);};}</span></p>
+<p class="p1"><span class="s1">function handleRemote(m){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(m.type==='state'){reloadAll();scheduleRender();pulseSync();}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>else if(m.type==='block'){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>reloadAll();pulseSync();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(session&amp;&amp;session.role==='team'){notify('🔨 '+m.name+' is on the block — place your bids!','info');view='room';render();}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>else if(session){notify('🔨 '+(m.name||'A player')+' called to the block.','info');scheduleRender();}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>else scheduleRender();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>else if(m.type==='sold'){reloadAll();pulseSync();if(!document.getElementById('soldov')&amp;&amp;m.cap){showSoldOverlay(m.cap,'sold');}else scheduleRender();}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>else if(m.type==='unsold'){reloadAll();pulseSync();if(!document.getElementById('soldov')&amp;&amp;m.cap){showSoldOverlay(m.cap,'unsold');}else scheduleRender();}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>else if(m.type==='toast'){notify(m.text||'',m.kind||'info');}</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function appInputFocused(){const a=document.activeElement;if(!a)return false;const tag=a.tagName;return (tag==='INPUT'||tag==='TEXTAREA'||tag==='SELECT')&amp;&amp;document.getElementById('app')&amp;&amp;document.getElementById('app').contains(a);}</span></p>
+<p class="p1"><span class="s1">function scheduleRender(){if(appInputFocused()){pendingRender=true;return;}render();}</span></p>
+<p class="p1"><span class="s1">document.addEventListener('focusout',e=&gt;{if(pendingRender&amp;&amp;e.target&amp;&amp;document.getElementById('app')&amp;&amp;document.getElementById('app').contains(e.target)){pendingRender=false;render();}});</span></p>
+<p class="p1"><span class="s1">function pulseSync(){const d=document.getElementById('syncdot');if(d){d.classList.remove('pulse');void d.offsetWidth;d.classList.add('pulse');}const ts=document.getElementById('syncts');if(ts)ts.textContent=new Date().toLocaleTimeString();}</span></p>
+<p class="p1"><span class="s1">function reloadAll(){teams=load(K.t,DEF_TEAMS);players=load(K.p,DEF_PLAYERS);A=load(K.a,{pid:null,bid:0,lead:null,status:'idle',history:[]});}</span></p>
+<p class="p1"><span class="s1">/* persist helpers: write + push to every other window */</span></p>
+<p class="p1"><span class="s1">function saveT(){save(K.t,teams);broadcast({type:'state'});}</span></p>
+<p class="p1"><span class="s1">function saveP(){save(K.p,players);broadcast({type:'state'});}</span></p>
+<p class="p1"><span class="s1">function saveA(){save(K.a,A);broadcast({type:'state'});}</span></p>
+<p class="p1"><span class="s1">addEventListener('storage',e=&gt;{if(e.key===K.t||e.key===K.p||e.key===K.a){reloadAll();scheduleRender();pulseSync();}});</span></p>
+<p class="p1"><span class="s1">setInterval(()=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const nt=localStorage.getItem(K.t),np=localStorage.getItem(K.p),na=localStorage.getItem(K.a);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(nt!==JSON.stringify(teams)||np!==JSON.stringify(players)||na!==JSON.stringify(A)){reloadAll();if(pendingRender&amp;&amp;!appInputFocused()){pendingRender=false;render();}else scheduleRender();pulseSync();}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>else if(pendingRender&amp;&amp;!appInputFocused()){pendingRender=false;render();}</span></p>
+<p class="p1"><span class="s1">},800);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ============================ HELPERS ============================ */</span></p>
+<p class="p1"><span class="s1">function fmt(a){a=+a||0;if(a&gt;=1e7){let v=Math.round(a/1e7*100)/100;return '₹'+trimZ(v)+' Cr';}if(a&gt;=1e5){let v=Math.round(a/1e5*100)/100;return '₹'+trimZ(v)+' L';}return '₹'+a.toLocaleString('en-IN');}</span></p>
+<p class="p1"><span class="s1">function trimZ(v){return (v%1===0)?v.toString():v.toString().replace(/0+$/,'').replace(/\.$/,'');}</span></p>
+<p class="p1"><span class="s1">function gid(){return 'x'+Date.now().toString(36)+Math.random().toString(36).slice(2,7);}</span></p>
+<p class="p1"><span class="s1">function catClass(c){c=(c||'').toLowerCase();if(c.includes('bat'))return 'bat';if(c.includes('bowl'))return 'bowl';if(c.includes('all'))return 'ar';return 'wk';}</span></p>
+<p class="p1"><span class="s1">function curPlayer(){return players.find(p=&gt;p.id===A.pid)||null;}</span></p>
+<p class="p1"><span class="s1">function teamOf(id){return teams.find(t=&gt;t.id===id);}</span></p>
+<p class="p1"><span class="s1">function squadOf(id){return players.filter(p=&gt;p.status==='sold'&amp;&amp;p.soldTo===id);}</span></p>
+<p class="p1"><span class="s1">function spentOf(id){return squadOf(id).reduce((s,p)=&gt;s+(p.soldPrice||0),0);}</span></p>
+<p class="p1"><span class="s1">function stepFor(b){if(b&lt;1e7)return[5e5,1e6,2e6];if(b&lt;3e7)return[1e6,2.5e6,5e6];return[2.5e6,5e6,1e7];}</span></p>
+<p class="p1"><span class="s1">function ladderFor(p){if(!A.bid)return[p.base,p.base+5e5,p.base+1e6,p.base+2e6].map(v=&gt;({v:v,open:true}));return stepFor(A.bid).map(s=&gt;({v:A.bid+s,open:false}));}</span></p>
+<p class="p1"><span class="s1">function minNext(){const p=curPlayer();if(!p)return 0;return A.bid?ladderFor(p)[0].v:p.base;}</span></p>
+<p class="p1"><span class="s1">function notify(m,t){const n=document.createElement('div');n.className='notif '+(t||'info');n.textContent=m;document.body.appendChild(n);setTimeout(()=&gt;{n.style.transition='.3s';n.style.opacity='0';n.style.transform='translateX(120%)';setTimeout(()=&gt;n.remove(),300);},2800);}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ---------- SOUND ---------- */</span></p>
+<p class="p1"><span class="s1">let AC=null;</span></p>
+<p class="p1"><span class="s1">function ac(){if(!AC){try{AC=new(window.AudioContext||window.webkitAudioContext)();}catch(e){}}if(AC&amp;&amp;AC.state==='suspended')AC.resume();return AC;}</span></p>
+<p class="p1"><span class="s1">function tone(f,dur,type,vol,when){if(!soundOn)return;const c=ac();if(!c)return;try{const o=c.createOscillator(),g=c.createGain();o.type=type||'sine';o.frequency.value=f;const t=c.currentTime+(when||0);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol||0.2,t+0.01);g.gain.exponentialRampToValueAtTime(0.0001,t+dur);o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+dur+0.02);}catch(e){}}</span></p>
+<p class="p1"><span class="s1">function sTick(amt){tone(420+Math.min(600,Math.log10(amt+1)*90),0.09,'triangle',0.18);}</span></p>
+<p class="p1"><span class="s1">function sGavel(){tone(150,0.08,'sine',0.4,0);tone(110,0.12,'sine',0.4,0.12);}</span></p>
+<p class="p1"><span class="s1">function sSold(){[660,830,990,1320].forEach((f,i)=&gt;tone(f,0.22,'square',0.16,i*0.09));}</span></p>
+<p class="p1"><span class="s1">function sUnsold(){tone(330,0.18,'sawtooth',0.14,0);tone(247,0.26,'sawtooth',0.14,0.14);}</span></p>
+<p class="p1"><span class="s1">addEventListener('pointerdown',()=&gt;ac(),{once:true});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function confetti(){const cols=['#F5C518','#FF4136','#2ECC71','#2E9BE6','#E5549B','#6C4AB0','#fff'];for(let i=0;i&lt;90;i++){const d=document.createElement('div');d.className='confetti';d.style.left=Math.random()*100+'vw';d.style.background=cols[i%cols.length];d.style.animationDuration=(2+Math.random()*2)+'s';d.style.animationDelay=(Math.random()*0.6)+'s';d.style.width=(6+Math.random()*8)+'px';d.style.height=(8+Math.random()*10)+'px';d.style.borderRadius=Math.random()&gt;0.5?'50%':'2px';document.body.appendChild(d);setTimeout(()=&gt;d.remove(),4500);}}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function openModal(html){closeModal(true);const o=document.createElement('div');o.className='ov';o.id='ov';o.innerHTML=`&lt;div class="modal"&gt;${html}&lt;/div&gt;`;o.addEventListener('mousedown',e=&gt;{if(e.target===o)closeModal();});document.body.appendChild(o);}</span></p>
+<p class="p1"><span class="s1">function closeModal(silent){const o=document.getElementById('ov');if(o)o.remove();if(!silent&amp;&amp;pendingRender){pendingRender=false;render();}}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">let io=null;</span></p>
+<p class="p1"><span class="s1">function setupReveal(){if(!io)io=new IntersectionObserver(es=&gt;es.forEach(e=&gt;{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:0.08});document.querySelectorAll('.rv').forEach(el=&gt;io.observe(el));}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ============================ RENDER ROOT ============================ */</span></p>
+<p class="p1"><span class="s1">function render(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(session&amp;&amp;session.role==='team'&amp;&amp;!teamOf(session.teamId)){session=null;notify('Your franchise was removed by the auctioneer.','err');}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const app=document.getElementById('app');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!session){app.innerHTML=loginHTML();afterRender();return;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const admin=session.role==='admin';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>app.innerHTML=headerHTML(admin)+navHTML(admin)+`&lt;div class="main"&gt;${admin?adminView():teamView()}&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>afterRender();</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function afterRender(){setupReveal();}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ============================ LOGIN ============================ */</span></p>
+<p class="p1"><span class="s1">function loginHTML(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const feat=players.slice(0,8);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const marq=feat.concat(feat).map(p=&gt;`&lt;span&gt;${p.name} &lt;b&gt;· ${p.cat}&lt;/b&gt;&lt;/span&gt;`).join('');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const credRows=[{role:'ad',nm:'Auctioneer / Admin',pw:'admin123',call:`useCred('admin','','admin123')`}]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.concat(teams.map(t=&gt;({role:'tm',nm:t.name,pw:t.pass,call:`useCred('team','${t.id}','${t.pass}')`})));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const form=loginRole==='admin'?`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="fg"&gt;&lt;label class="lbl"&gt;Auctioneer Password&lt;/label&gt;&lt;input type="password" id="lp" value="admin123" onkeydown="if(event.key==='Enter')doLogin()"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="btn btn-gold" style="width:100%" onclick="doLogin()"&gt;Take The Podium →&lt;/button&gt;`:`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="fg"&gt;&lt;label class="lbl"&gt;Your Franchise&lt;/label&gt;&lt;select id="lt"&gt;${teams.map(t=&gt;`&lt;option value="${t.id}"&gt;${t.name} (${t.short})&lt;/option&gt;`).join('')}&lt;/select&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="fg"&gt;&lt;label class="lbl"&gt;Franchise Password&lt;/label&gt;&lt;input type="password" id="lp" placeholder="enter password" onkeydown="if(event.key==='Enter')doLogin()"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="btn btn-gold" style="width:100%" onclick="doLogin()"&gt;Enter The War Room →&lt;/button&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return `&lt;div class="login"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="left"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="bg" style="background-image:url(${IMG.gavel})"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="inner"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="kicker"&gt;Board of Control · Live Auction Room&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h1&gt;IPL MEGA&lt;br&gt;AUCTION &lt;em&gt;'27&lt;/em&gt;&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="callout" id="callout"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="ministats"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="m"&gt;&lt;div class="v"&gt;${teams.length}&lt;/div&gt;&lt;div class="l"&gt;Franchises&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="m"&gt;&lt;div class="v"&gt;${fmt(teams.reduce((s,t)=&gt;s+t.budget,0))}&lt;/div&gt;&lt;div class="l"&gt;Combined Purse&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="m"&gt;&lt;div class="v"&gt;${players.filter(p=&gt;p.status!=='sold').length}&lt;/div&gt;&lt;div class="l"&gt;Players In Pool&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="marq"&gt;&lt;div class="track"&gt;${marq}&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="right"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="logbox"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Step Up To The Mic&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="sub"&gt;Sign in as the Auctioneer to run the show, or as a Franchise Owner to bid. Open this page in &lt;b style="color:var(--gold)"&gt;two windows&lt;/b&gt; to watch bids sync live.&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="tabs"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="tab ${loginRole==='admin'?'on':''}" onclick="setLoginRole('admin')"&gt;🎙️ Auctioneer&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="tab ${loginRole==='team'?'on':''}" onclick="setLoginRole('team')"&gt;🏏 Franchise&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>${form}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="creds"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h4&gt;🔑 Demo Credentials — tap USE to autofill&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>${credRows.map(c=&gt;`&lt;div class="crow"&gt;&lt;span class="role ${c.role}"&gt;${c.role==='ad'?'ADMIN':'TEAM'}&lt;/span&gt;&lt;span class="nm"&gt;${c.nm}&lt;/span&gt;&lt;span class="pw"&gt;${c.pw}&lt;/span&gt;&lt;button class="use" onclick="${c.call}"&gt;USE&lt;/button&gt;&lt;/div&gt;`).join('')}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function setLoginRole(r){loginRole=r;render();}</span></p>
+<p class="p1"><span class="s1">function useCred(role,tid,pw){loginRole=role;render();setTimeout(()=&gt;{if(role==='team'){const s=document.getElementById('lt');if(s)s.value=tid;}const p=document.getElementById('lp');if(p){p.value=pw;p.focus();}},30);}</span></p>
+<p class="p1"><span class="s1">function doLogin(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const pw=(document.getElementById('lp')||{}).value||'';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(loginRole==='admin'){if(pw==='admin123'){session={role:'admin'};view='room';render();notify('Welcome, Auctioneer. The hammer is yours.','ok');}else notify('Wrong auctioneer password.','err');}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>else{const tid=(document.getElementById('lt')||{}).value;const t=teamOf(tid);if(t&amp;&amp;t.pass===pw){session={role:'team',teamId:tid};view='room';render();notify('Welcome, '+t.short+'! Place your bids wisely.','ok');}else notify('Wrong franchise password.','err');}</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function logout(){session=null;view='room';render();}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ============================ HEADER / NAV ============================ */</span></p>
+<p class="p1"><span class="s1">function headerHTML(admin){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return `&lt;div class="hdr"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="crest"&gt;🏏&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="brand"&gt;&lt;div class="t"&gt;IPL MEGA AUCTION&lt;/div&gt;&lt;div class="s"&gt;Season 2027 · &lt;b&gt;LIVE&lt;/b&gt; from Mumbai&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="spacer"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="right"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="syncwrap" title="Real-time sync active across windows"&gt;&lt;span class="syncdot" id="syncdot"&gt;&lt;/span&gt;SYNC &lt;span id="syncts"&gt;&lt;/span&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button class="iconbtn" title="Sound ${soundOn?'on':'off'}" onclick="toggleSound()"&gt;${soundOn?'🔊':'🔇'}&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>${admin?`&lt;button class="iconbtn" title="Reset demo data" onclick="resetDemo()"&gt;↺&lt;/button&gt;`:''}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="uchip"&gt;&lt;span class="dot"&gt;&lt;/span&gt;${admin?'Auctioneer':teamOf(session.teamId).short}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button class="iconbtn" title="Logout" onclick="logout()"&gt;⏻&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function toggleSound(){soundOn=!soundOn;save(K.s,soundOn);if(soundOn)sTick(1e7);render();}</span></p>
+<p class="p1"><span class="s1">function resetDemo(){if(!confirm('Reset ALL teams, players &amp; auction to the demo defaults? This wipes current progress.'))return;localStorage.removeItem(K.t);localStorage.removeItem(K.p);localStorage.removeItem(K.a);reloadAll();saveT();saveP();saveA();selTeam=null;notify('Demo data restored.','info');render();}</span></p>
+<p class="p1"><span class="s1">function navHTML(admin){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const tabs=admin?[['room','🔨 Auction Room'],['players','👥 Players'],['teams','💰 Franchises &amp; Purses'],['ledger','📜 Sold / Unsold Ledger']]:[['room','🔨 Live Auction'],['squad','🛡️ My Squad'],['allp','📋 Player Pool']];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return `&lt;div class="nav"&gt;${tabs.map(t=&gt;`&lt;div class="ntab ${view===t[0]?'on':''}" onclick="setView('${t[0]}')"&gt;${t[1]}&lt;/div&gt;`).join('')}&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function setView(v){view=v;render();}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ============================ VIEWS ============================ */</span></p>
+<p class="p1"><span class="s1">function adminView(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(view==='players')return playersHTML(true);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(view==='teams')return teamsHTML();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(view==='ledger')return ledgerHTML();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return roomHTML(true);</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function teamView(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(view==='squad')return squadHTML();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(view==='allp')return playersHTML(false);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return roomHTML(false);</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function tickerHTML(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const h=(A.history||[]).slice(-14).reverse();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const txt=h.length?h.map(x=&gt;`&lt;span&gt;&lt;b&gt;${x.s}&lt;/b&gt; ${fmt(x.a)} &lt;span class="sep"&gt;◆&lt;/span&gt;&lt;/span&gt;`).join(''):`&lt;span&gt;The hammer awaits — bring a player to the block to begin bidding.&lt;/span&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return `&lt;div class="ticker"&gt;&lt;div class="tag"&gt;&lt;span&gt;&lt;i&gt;&lt;/i&gt;LIVE&lt;/span&gt;&lt;/div&gt;&lt;div class="trackwrap"&gt;&lt;div class="track"&gt;${txt}${txt}&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function statsHTML(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const sold=players.filter(p=&gt;p.status==='sold');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const pool=players.filter(p=&gt;p.status!=='sold');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const spent=sold.reduce((s,p)=&gt;s+(p.soldPrice||0),0);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return `&lt;div class="stats rv"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="stat"&gt;&lt;div class="v"&gt;${players.length}&lt;/div&gt;&lt;div class="l"&gt;Total Players&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="stat"&gt;&lt;div class="v g"&gt;${sold.length}&lt;/div&gt;&lt;div class="l"&gt;Sold&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="stat"&gt;&lt;div class="v"&gt;${players.filter(p=&gt;p.status==='unsold').length}&lt;/div&gt;&lt;div class="l"&gt;Unsold&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="stat"&gt;&lt;div class="v b"&gt;${pool.length}&lt;/div&gt;&lt;div class="l"&gt;In Pool&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="stat"&gt;&lt;div class="v"&gt;${fmt(spent)}&lt;/div&gt;&lt;div class="l"&gt;Total Spent&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function roomHTML(admin){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>let body='';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(A.status==='live'&amp;&amp;curPlayer())body=blockHTML(admin);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>else body=nextUpHTML(admin);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return tickerHTML()+statsHTML()+body+purseHTML();</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function blockHTML(admin){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const p=curPlayer();const lead=A.lead?teamOf(A.lead):null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const lad=ladderFor(p);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>let bidPanel='';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(admin){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>bidPanel=`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="ladder-lbl lbl"&gt;① Pick the bidding franchise&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="tchips"&gt;${teams.map(t=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const leading=t.id===A.lead;const afford=t.budget&gt;=minNext();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const dis=leading||!afford;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return `&lt;button class="tchip ${selTeam===t.id?'sel':''}" style="--tc:${t.color}" ${dis?'disabled':''} onclick="pickTeam('${t.id}')"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>${leading?'&lt;span class="ld"&gt;LEADING&lt;/span&gt;':''}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="n"&gt;&lt;span class="sw" style="background:${t.color}"&gt;&lt;/span&gt;${t.short}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="p"&gt;${fmt(t.budget)}&lt;/div&gt;&lt;/button&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}).join('')}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="ladder-lbl lbl"&gt;② Raise the bid&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="ladder"&gt;${lad.map(o=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const t=teamOf(selTeam);const ok=t&amp;&amp;t.budget&gt;=o.v;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return `&lt;button class="lbtn" ${(!selTeam||!ok)?'disabled':''} onclick="placeBid(${o.v})"&gt;${o.open?'OPEN':'+'+fmt(o.v-A.bid)}&lt;small&gt;${fmt(o.v)}&lt;/small&gt;&lt;/button&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}).join('')}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="custom"&gt;&lt;input type="number" id="cst" placeholder="Custom bid amount (₹)" onkeydown="if(event.key==='Enter')customBid()"&gt;&lt;button class="btn btn-ghost btn-sm" onclick="customBid()"&gt;Bid&lt;/button&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="actions"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-green" ${!A.lead?'disabled':''} onclick="hammer()"&gt;🔨 Hammer — SOLD&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-red" onclick="markUnsold()"&gt;✋ Unsold&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-ghost" onclick="withdraw()"&gt;↩ Withdraw&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="hint"&gt;Every franchise window sees this block &amp; every bid instantly.&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}else{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const me=teamOf(session.teamId);const leading=A.lead===me.id;const afford=me.budget&gt;=minNext();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>bidPanel=`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="ladder-lbl lbl"&gt;Your bid ladder · ${me.short} purse ${fmt(me.budget)}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>${leading?`&lt;div style="font-family:'Teko';font-size:1.6rem;color:var(--green);margin:6px 0"&gt;✓ You hold the highest bid — sit tight.&lt;/div&gt;`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>:(afford?`&lt;div class="ladder"&gt;${lad.map(o=&gt;{const ok=me.budget&gt;=o.v;return `&lt;button class="lbtn" ${ok?'':'disabled'} onclick="placeBid(${o.v})"&gt;${o.open?'OPEN':'+'+fmt(o.v-A.bid)}&lt;small&gt;${fmt(o.v)}&lt;/small&gt;&lt;/button&gt;`;}).join('')}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="custom"&gt;&lt;input type="number" id="cst" placeholder="Custom bid (₹)" onkeydown="if(event.key==='Enter')customBid()"&gt;&lt;button class="btn btn-ghost btn-sm" onclick="customBid()"&gt;Bid&lt;/button&gt;&lt;/div&gt;`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>:`&lt;div style="color:var(--red);font-weight:600;margin:8px 0"&gt;⚠ Purse too low to bid on this player.&lt;/div&gt;`)}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="actions"&gt;&lt;button class="btn btn-ghost" onclick="passBid()"&gt;🙅 Pass This Round&lt;/button&gt;&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return `&lt;div class="block"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="ab-player panel corners"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>${imgTag(p.img,p.name,'#F5C518','photo')}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="nm"&gt;${p.name}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;span class="chip ${catClass(p.cat)}"&gt;${p.cat}&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="pf"&gt;“${p.pf}”&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="base"&gt;Base Price · &lt;b&gt;${fmt(p.base)}&lt;/b&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="ab-bid panel corners"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="bidrow"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="bidnow"&gt;&lt;div class="lbl"&gt;Current Bid&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>${A.bid?`&lt;div class="num pop" key="${A.bid}"&gt;${fmt(A.bid)}&lt;/div&gt;`:`&lt;div class="await"&gt;Awaiting opening bid…&lt;/div&gt;`}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="leadbox"&gt;&lt;div class="lbl"&gt;Highest Bidder&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>${lead?`&lt;div class="who"&gt;&lt;span class="sw" style="background:${lead.color}"&gt;&lt;/span&gt;${lead.name}&lt;/div&gt;`:`&lt;div class="none"&gt;— no bid yet —&lt;/div&gt;`}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>${bidPanel}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function nextUpHTML(admin){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const pool=players.filter(p=&gt;p.status!=='sold');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(admin){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>return `&lt;div class="nextup rv"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="section-h"&gt;&lt;h2&gt;&lt;span class="em"&gt;🔨&lt;/span&gt; Next Under The Hammer&lt;/h2&gt;&lt;span class="ct"&gt;${pool.length} in pool&lt;/span&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>${pool.length?`&lt;div class="poolgrid"&gt;${pool.map(p=&gt;`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="pcard" onclick="toBlock('${p.id}')"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span class="ribbon ${p.status==='unsold'?'unsold':'pool'}"&gt;${p.status==='unsold'?'RE-BID':'AVAILABLE'}&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>${imgTag(p.img,p.name,'#F5C518')}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="nm"&gt;${p.name}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span class="chip ${catClass(p.cat)}"&gt;${p.cat}&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="bp"&gt;Base ${fmt(p.base)}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;`).join('')}&lt;/div&gt;`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>:`&lt;div class="empty"&gt;&lt;div class="e"&gt;🏆&lt;/div&gt;&lt;h4&gt;The pool is empty — every player has been auctioned.&lt;/h4&gt;&lt;/div&gt;`}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const me=teamOf(session.teamId);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return `&lt;div class="nextup rv"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="panel corners waitcard"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;span class="big"&gt;⏳&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Waiting For The Auctioneer&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p style="color:var(--mute);max-width:540px;margin:0 auto"&gt;No player is on the block right now. The moment the Auctioneer calls a name, this screen flips to the live bidding board automatically. Purse ready — &lt;b style="color:var(--gold)"&gt;${me.short}: ${fmt(me.budget)}&lt;/b&gt;.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="livesync"&gt;&lt;span class="syncdot"&gt;&lt;/span&gt; Live sync active — updates the instant the block opens&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="section-h" style="margin-top:22px"&gt;&lt;h2&gt;&lt;span class="em"&gt;📋&lt;/span&gt; Remaining Pool&lt;/h2&gt;&lt;span class="ct"&gt;${pool.length}&lt;/span&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="poolgrid"&gt;${pool.map(p=&gt;`&lt;div class="pcard dim"&gt;&lt;span class="ribbon pool"&gt;AVAILABLE&lt;/span&gt;${imgTag(p.img,p.name,'#F5C518')}&lt;div class="nm"&gt;${p.name}&lt;/div&gt;&lt;span class="chip ${catClass(p.cat)}"&gt;${p.cat}&lt;/span&gt;&lt;div class="bp"&gt;Base ${fmt(p.base)}&lt;/div&gt;&lt;/div&gt;`).join('')}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function purseHTML(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return `&lt;div class="purse rv"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="section-h"&gt;&lt;h2&gt;&lt;span class="em"&gt;💰&lt;/span&gt; Franchise Purse Board&lt;/h2&gt;&lt;span class="ct"&gt;${teams.length} franchises&lt;/span&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="pgrid"&gt;${teams.map(t=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const sq=squadOf(t.id);const spent=spentOf(t.id);const total=spent+t.budget;const pct=total?(spent/total*100):0;const leading=A.status==='live'&amp;&amp;A.lead===t.id;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>return `&lt;div class="tcard" style="--tc:${t.color}"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="stripe"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="body"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="top"&gt;&lt;div class="tn"&gt;&lt;span class="sw"&gt;&lt;/span&gt;${t.name}&lt;/div&gt;${leading?'&lt;span class="ld"&gt;LEADING&lt;/span&gt;':''}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="rem"&gt;${fmt(t.budget)}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="lbl"&gt;Remaining Purse&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="bar"&gt;&lt;i style="width:${pct}%"&gt;&lt;/i&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="meta"&gt;&lt;span&gt;Spent &lt;b&gt;${fmt(spent)}&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Squad &lt;b&gt;${sq.length}&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="squad"&gt;${sq.length?sq.map(p=&gt;`&lt;div class="sq"&gt;&lt;span class="l"&gt;${imgTag(p.img,p.name,t.color)}&lt;span&gt;${p.name}&lt;/span&gt;&lt;/span&gt;&lt;span class="pr"&gt;${fmt(p.soldPrice)}&lt;/span&gt;&lt;/div&gt;`).join(''):'&lt;div class="empty"&gt;No players yet&lt;/div&gt;'}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}).join('')}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ---------- PLAYERS ---------- */</span></p>
+<p class="p1"><span class="s1">function playersHTML(admin){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return `&lt;div class="section-h rv"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h2&gt;&lt;span class="em"&gt;👥&lt;/span&gt; ${admin?'Player Registry':'Player Pool'}&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="toolbar"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;select id="pf-filter" onchange="applyPlayerFilter()"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;option value="all"&gt;All statuses&lt;/option&gt;&lt;option value="pool"&gt;In Pool&lt;/option&gt;&lt;option value="sold"&gt;Sold&lt;/option&gt;&lt;option value="unsold"&gt;Unsold&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;input id="pf-search" placeholder="Search name…" oninput="applyPlayerFilter()"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>${admin?`&lt;button class="btn btn-gold btn-sm" onclick="playerModal()"&gt;+ Add Player&lt;/button&gt;`:''}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="players-grid" class="poolgrid rv"&gt;${playerCardsHTML(admin,'all','')}&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function playerCardsHTML(admin,filter,q){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>let list=players.slice();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(filter&amp;&amp;filter!=='all')list=list.filter(p=&gt;p.status===filter);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(q)list=list.filter(p=&gt;p.name.toLowerCase().includes(q.toLowerCase()));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!list.length)return `&lt;div class="empty" style="grid-column:1/-1"&gt;&lt;div class="e"&gt;🔍&lt;/div&gt;&lt;h4&gt;No players match.&lt;/h4&gt;&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return list.map(p=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const onBlock=A.status==='live'&amp;&amp;A.pid===p.id;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const buyer=p.soldTo?teamOf(p.soldTo):null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const click=admin?(onBlock?`onclick="notify('This player is currently on the block — finish the auction first.','err')"`:`onclick="playerModal('${p.id}')"`):'';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const dim=(!admin&amp;&amp;p.status==='unsold')?'dim':'';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const rib=p.status==='sold'?`&lt;span class="ribbon sold"&gt;SOLD&lt;/span&gt;`:p.status==='unsold'?`&lt;span class="ribbon unsold"&gt;UNSOLD&lt;/span&gt;`:onBlock?`&lt;span class="ribbon lock"&gt;ON BLOCK&lt;/span&gt;`:`&lt;span class="ribbon pool"&gt;POOL&lt;/span&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>return `&lt;div class="pcard ${dim}" ${click} style="${admin?'':'cursor:default'}"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>${rib}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>${imgTag(p.img,p.name,'#F5C518')}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="nm"&gt;${p.name}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;span class="chip ${catClass(p.cat)}"&gt;${p.cat}&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="bp"&gt;${p.status==='sold'?fmt(p.soldPrice):'Base '+fmt(p.base)}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>${buyer?`&lt;div style="font-size:.78rem;color:var(--mute);margin-top:4px"&gt;→ &lt;b style="color:${buyer.color}"&gt;${buyer.short}&lt;/b&gt;&lt;/div&gt;`:''}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}).join('');</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function applyPlayerFilter(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const f=(document.getElementById('pf-filter')||{}).value||'all';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const q=(document.getElementById('pf-search')||{}).value||'';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const admin=session.role==='admin';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const g=document.getElementById('players-grid');if(g)g.innerHTML=playerCardsHTML(admin,f,q);</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function playerModal(id){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const p=id?players.find(x=&gt;x.id===id):null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const name=p?p.name:'',cat=p?p.cat:'Batsman',base=p?p.base:10000000,img=p?p.img:IMG.bat,pf=p?p.pf:'',st=p?p.status:'pool';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const thumbs=PHOTOS.map(u=&gt;`&lt;label&gt;&lt;input type="radio" name="ph" value="${u}" ${img===u?'checked':''}&gt;${imgTag(u,'player','#F5C518')}&lt;/label&gt;`).join('');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>openModal(`&lt;h3&gt;${p?'✏️ Edit Player':'➕ Add Player'}&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="fg"&gt;&lt;label class="lbl"&gt;Full Name&lt;/label&gt;&lt;input id="pm-name" value="${name.replace(/"/g,'&amp;quot;')}"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="row2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="fg"&gt;&lt;label class="lbl"&gt;Role / Category&lt;/label&gt;&lt;select id="pm-cat"&gt;${['Batsman','Bowler','All-Rounder','Wicket-Keeper'].map(c=&gt;`&lt;option ${cat===c?'selected':''}&gt;${c}&lt;/option&gt;`).join('')}&lt;/select&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="fg"&gt;&lt;label class="lbl"&gt;Base Price (₹)&lt;/label&gt;&lt;input type="number" id="pm-base" value="${base}"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="fg"&gt;&lt;label class="lbl"&gt;Photo&lt;/label&gt;&lt;div class="phpick"&gt;${thumbs}&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="fg"&gt;&lt;label class="lbl"&gt;…or paste a photo URL&lt;/label&gt;&lt;input id="pm-img" value="${PHOTOS.includes(img)?'':img}"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="fg"&gt;&lt;label class="lbl"&gt;Scouting Report / Portfolio&lt;/label&gt;&lt;textarea id="pm-pf" rows="3"&gt;${(pf||'').replace(/&lt;/g,'&amp;lt;')}&lt;/textarea&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>${p?`&lt;div class="fg"&gt;&lt;label class="lbl"&gt;Status&lt;/label&gt;&lt;select id="pm-st"&gt;&lt;option value="pool" ${st==='pool'?'selected':''}&gt;In Pool&lt;/option&gt;&lt;option value="unsold" ${st==='unsold'?'selected':''}&gt;Unsold&lt;/option&gt;&lt;option value="sold" ${st==='sold'?'selected':''}&gt;Sold (manual)&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;`:''}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="acts"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>${p?`&lt;button class="btn btn-red btn-sm" onclick="deletePlayer('${p.id}')"&gt;🗑 Delete&lt;/button&gt;`:''}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-ghost btn-sm" onclick="closeModal()"&gt;Cancel&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-gold btn-sm" onclick="savePlayer('${id||''}')"&gt;💾 Save&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;`);</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function savePlayer(id){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const name=(document.getElementById('pm-name').value||'').trim();if(!name)return notify('Name is required.','err');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const cat=document.getElementById('pm-cat').value;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const base=+document.getElementById('pm-base').value||0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const custImg=(document.getElementById('pm-img').value||'').trim();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const radio=document.querySelector('input[name=ph]:checked');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const img=custImg||(radio?radio.value:IMG.bat);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const pf=(document.getElementById('pm-pf').value||'').trim();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(id){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const p=players.find(x=&gt;x.id===id);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const newSt=document.getElementById('pm-st').value;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(p.status==='sold'&amp;&amp;newSt!=='sold'){const t=teamOf(p.soldTo);if(t)t.budget+=(p.soldPrice||0);delete p.soldTo;delete p.soldPrice;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(newSt==='sold'&amp;&amp;p.status!=='sold')notify('Use the Auction Room to sell a player so the purse deducts correctly.','err');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>Object.assign(p,{name:name,cat:cat,base:base,img:img,pf:pf,status:newSt==='sold'?p.status:newSt});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>notify('Player updated.','ok');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}else{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>players.push({id:gid(),name:name,cat:cat,base:base,img:img,pf:pf,status:'pool'});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>notify('Player added to the pool.','ok');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>saveP();saveT();closeModal();render();</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function deletePlayer(id){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const p=players.find(x=&gt;x.id===id);if(!p)return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(A.status==='live'&amp;&amp;A.pid===id)return notify('Cannot delete — player is on the block.','err');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!confirm('Delete '+p.name+'?'))return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(p.status==='sold'){const t=teamOf(p.soldTo);if(t)t.budget+=(p.soldPrice||0);}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>players=players.filter(x=&gt;x.id!==id);saveP();saveT();closeModal(true);notify('Player deleted.','info');render();</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ---------- TEAMS &amp; PURSES ---------- */</span></p>
+<p class="p1"><span class="s1">function teamsHTML(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return `&lt;div class="section-h rv"&gt;&lt;h2&gt;&lt;span class="em"&gt;💰&lt;/span&gt; Franchises &amp; Purchase Bags&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="btn btn-gold btn-sm" onclick="teamModal()"&gt;+ Add Franchise&lt;/button&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="pgrid rv"&gt;${teams.map(t=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const sq=squadOf(t.id);const spent=spentOf(t.id);const total=spent+t.budget;const pct=total?(spent/total*100):0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>return `&lt;div class="tcard" style="--tc:${t.color}"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="stripe"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="body"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="top"&gt;&lt;div class="tn"&gt;&lt;span class="sw"&gt;&lt;/span&gt;${t.name} &lt;span style="color:var(--mute);font-size:1rem"&gt;(${t.short})&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="rem"&gt;${fmt(t.budget)}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="lbl"&gt;Remaining Purchase Bag&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="bar"&gt;&lt;i style="width:${pct}%"&gt;&lt;/i&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="meta"&gt;&lt;span&gt;Spent &lt;b&gt;${fmt(spent)}&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Squad &lt;b&gt;${sq.length}&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div style="font-size:.78rem;color:var(--mute);margin-top:8px"&gt;🔑 Password: &lt;b style="color:var(--gold)"&gt;${t.pass}&lt;/b&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="squad"&gt;${sq.length?sq.map(p=&gt;`&lt;div class="sq"&gt;&lt;span class="l"&gt;${imgTag(p.img,p.name,t.color)}&lt;span&gt;${p.name}&lt;/span&gt;&lt;/span&gt;&lt;span class="pr"&gt;${fmt(p.soldPrice)}&lt;/span&gt;&lt;/div&gt;`).join(''):'&lt;div class="empty"&gt;No players yet&lt;/div&gt;'}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div style="display:flex;gap:8px;margin-top:12px"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button class="btn btn-ghost btn-sm" style="flex:1" onclick="purseModal('${t.id}')"&gt;💰 Adjust Bag&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button class="btn btn-ghost btn-sm" style="flex:1" onclick="teamModal('${t.id}')"&gt;✏️ Edit&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button class="btn btn-red btn-sm" onclick="deleteTeam('${t.id}')"&gt;🗑&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}).join('')}&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function teamModal(id){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const t=id?teamOf(id):null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>openModal(`&lt;h3&gt;${t?'✏️ Edit Franchise':'➕ Add Franchise'}&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="fg"&gt;&lt;label class="lbl"&gt;Franchise Name&lt;/label&gt;&lt;input id="tm-name" value="${t?t.name.replace(/"/g,'&amp;quot;'):''}"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="row2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="fg"&gt;&lt;label class="lbl"&gt;Short Code&lt;/label&gt;&lt;input id="tm-short" maxlength="5" value="${t?t.short:''}"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="fg"&gt;&lt;label class="lbl"&gt;Team Colour&lt;/label&gt;&lt;input type="color" id="tm-color" value="${t?t.color:'#F5C518'}"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="row2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="fg"&gt;&lt;label class="lbl"&gt;Login Password&lt;/label&gt;&lt;input id="tm-pass" value="${t?t.pass:''}"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="fg"&gt;&lt;label class="lbl"&gt;Purchase Bag (₹)&lt;/label&gt;&lt;input type="number" id="tm-budget" value="${t?t.budget:1000000000}"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="acts"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>${t?`&lt;button class="btn btn-red btn-sm" onclick="deleteTeam('${t.id}')"&gt;🗑 Delete&lt;/button&gt;`:''}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-ghost btn-sm" onclick="closeModal()"&gt;Cancel&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-gold btn-sm" onclick="saveTeam('${id||''}')"&gt;💾 Save&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;`);</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function saveTeam(id){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const name=(document.getElementById('tm-name').value||'').trim();const short=(document.getElementById('tm-short').value||'').trim().toUpperCase();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const color=document.getElementById('tm-color').value;const pass=(document.getElementById('tm-pass').value||'').trim();const budget=+document.getElementById('tm-budget').value||0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!name||!short||!pass)return notify('Name, short code and password are required.','err');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(id){Object.assign(teamOf(id),{name:name,short:short,color:color,pass:pass,budget:budget});notify('Franchise updated.','ok');}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>else{teams.push({id:gid(),name:name,short:short,color:color,pass:pass,budget:budget});notify('Franchise added.','ok');}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>saveT();closeModal();render();</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function deleteTeam(id){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const t=teamOf(id);if(!t)return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(session&amp;&amp;session.role==='team'&amp;&amp;session.teamId===id)return notify("You can't delete your own logged-in franchise.",'err');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!confirm('Delete '+t.name+'? Its players return to the pool and purses are refunded.'))return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>players.filter(p=&gt;p.soldTo===id).forEach(p=&gt;{p.status='pool';delete p.soldTo;delete p.soldPrice;});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>teams=teams.filter(x=&gt;x.id!==id);saveT();saveP();closeModal(true);notify('Franchise deleted.','info');render();</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function purseModal(id){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const t=teamOf(id);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>openModal(`&lt;h3&gt;💰 Adjust Purchase Bag · ${t.short}&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p style="color:var(--mute);margin-bottom:14px"&gt;Current remaining bag: &lt;b style="color:var(--gold)"&gt;${fmt(t.budget)}&lt;/b&gt;. Add or remove funds at any time.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="fg"&gt;&lt;label class="lbl"&gt;New Purchase Bag (₹)&lt;/label&gt;&lt;input type="number" id="pr-val" value="${t.budget}"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="quick"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button class="qbtn" onclick="adjPr(-50000000)"&gt;−5 Cr&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button class="qbtn" onclick="adjPr(-10000000)"&gt;−1 Cr&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button class="qbtn" onclick="adjPr(-5000000)"&gt;−50 L&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button class="qbtn" onclick="adjPr(5000000)"&gt;+50 L&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button class="qbtn" onclick="adjPr(10000000)"&gt;+1 Cr&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button class="qbtn" onclick="adjPr(50000000)"&gt;+5 Cr&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="acts"&gt;&lt;button class="btn btn-ghost btn-sm" onclick="closeModal()"&gt;Cancel&lt;/button&gt;&lt;button class="btn btn-gold btn-sm" onclick="savePurse('${id}')"&gt;💾 Save Bag&lt;/button&gt;&lt;/div&gt;`);</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function adjPr(d){const i=document.getElementById('pr-val');i.value=Math.max(0,(+i.value||0)+d);}</span></p>
+<p class="p1"><span class="s1">function savePurse(id){const t=teamOf(id);const v=Math.max(0,+document.getElementById('pr-val').value||0);t.budget=v;saveT();closeModal();notify(t.short+' purse set to '+fmt(v)+'.','ok');render();}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ---------- LEDGER ---------- */</span></p>
+<p class="p1"><span class="s1">function ledgerHTML(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const sold=players.filter(p=&gt;p.status==='sold');const unsold=players.filter(p=&gt;p.status==='unsold');const pool=players.filter(p=&gt;p.status==='pool');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const card=p=&gt;{const b=p.soldTo?teamOf(p.soldTo):null;return `&lt;div class="pcard dim" style="cursor:default"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>${imgTag(p.img,p.name,b?b.color:'#F5C518')}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="nm"&gt;${p.name}&lt;/div&gt;&lt;span class="chip ${catClass(p.cat)}"&gt;${p.cat}&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="bp" style="color:${p.status==='sold'?'var(--green)':'var(--gold)'}"&gt;${p.status==='sold'?fmt(p.soldPrice):'Base '+fmt(p.base)}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>${b?`&lt;div style="font-size:.8rem;margin-top:4px"&gt;→ &lt;b style="color:${b.color}"&gt;${b.name}&lt;/b&gt;&lt;/div&gt;`:''}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;`;};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return `&lt;div class="ledg-sec rv"&gt;&lt;h3&gt;🏆 Sold &lt;span class="pill" style="background:rgba(46,204,113,.2);color:var(--green)"&gt;${sold.length}&lt;/span&gt;&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>${sold.length?`&lt;div class="poolgrid"&gt;${sold.map(card).join('')}&lt;/div&gt;`:`&lt;div class="empty"&gt;&lt;h4&gt;No sales yet.&lt;/h4&gt;&lt;/div&gt;`}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="ledg-sec rv"&gt;&lt;h3&gt;✋ Unsold &lt;span class="pill" style="background:rgba(126,140,160,.2);color:#9fb0c6"&gt;${unsold.length}&lt;/span&gt;&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>${unsold.length?`&lt;div class="poolgrid"&gt;${unsold.map(card).join('')}&lt;/div&gt;`:`&lt;div class="empty"&gt;&lt;h4&gt;No unsold players.&lt;/h4&gt;&lt;/div&gt;`}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="ledg-sec rv"&gt;&lt;h3&gt;📋 Still In Pool &lt;span class="pill" style="background:rgba(77,163,255,.2);color:var(--bat)"&gt;${pool.length}&lt;/span&gt;&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>${pool.length?`&lt;div class="poolgrid"&gt;${pool.map(card).join('')}&lt;/div&gt;`:`&lt;div class="empty"&gt;&lt;h4&gt;Pool cleared.&lt;/h4&gt;&lt;/div&gt;`}&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ---------- SQUAD ---------- */</span></p>
+<p class="p1"><span class="s1">function squadHTML(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const me=teamOf(session.teamId);const sq=squadOf(me.id);const spent=spentOf(me.id);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return `&lt;div class="stats rv"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="stat"&gt;&lt;div class="v"&gt;${fmt(me.budget)}&lt;/div&gt;&lt;div class="l"&gt;Remaining Purse&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="stat"&gt;&lt;div class="v r"&gt;${fmt(spent)}&lt;/div&gt;&lt;div class="l"&gt;Spent&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="stat"&gt;&lt;div class="v g"&gt;${sq.length}&lt;/div&gt;&lt;div class="l"&gt;Players Bought&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="section-h rv"&gt;&lt;h2&gt;&lt;span class="em" style="color:${me.color}"&gt;●&lt;/span&gt; ${me.name} Squad&lt;/h2&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>${sq.length?`&lt;div class="poolgrid rv"&gt;${sq.map(p=&gt;`&lt;div class="pcard dim" style="cursor:default;border-color:${me.color}"&gt;&lt;span class="ribbon sold"&gt;SOLD&lt;/span&gt;${imgTag(p.img,p.name,me.color)}&lt;div class="nm"&gt;${p.name}&lt;/div&gt;&lt;span class="chip ${catClass(p.cat)}"&gt;${p.cat}&lt;/span&gt;&lt;div class="bp" style="color:var(--green)"&gt;${fmt(p.soldPrice)}&lt;/div&gt;&lt;/div&gt;`).join('')}&lt;/div&gt;`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>:`&lt;div class="empty rv"&gt;&lt;div class="e"&gt;🛡️&lt;/div&gt;&lt;h4&gt;Your squad is empty — start bidding in the Auction Room!&lt;/h4&gt;&lt;/div&gt;`}`;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ============================ AUCTION ACTIONS ============================ */</span></p>
+<p class="p1"><span class="s1">function toBlock(id){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(A.status==='live')return notify('Finish the current player first.','err');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const p=players.find(x=&gt;x.id===id);if(!p)return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>A={pid:id,bid:0,lead:null,status:'live',history:A.history||[]};selTeam=null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>saveA();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>broadcast({type:'block',name:p.name});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>sGavel();notify('🔨 '+p.name+' called to the block!','info');render();</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function pickTeam(id){selTeam=id;render();}</span></p>
+<p class="p1"><span class="s1">function placeBid(amt){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const p=curPlayer();if(!p||A.status!=='live')return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const tid=session.role==='admin'?selTeam:session.teamId;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!tid)return notify('Select a bidding franchise first.','err');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const t=teamOf(tid);if(!t)return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(A.lead===tid)return notify(t.short+' already holds the top bid.','err');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const floor=A.bid?ladderFor(p)[0].v:p.base;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(amt&lt;floor)return notify('Bid must be at least '+fmt(floor)+'.','err');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(amt&gt;t.budget)return notify(t.short+" can't afford "+fmt(amt)+'.','err');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>A.bid=amt;A.lead=tid;A.history.push({s:t.short,n:p.name,a:amt,t:Date.now()});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>saveA();sTick(amt);render();</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function customBid(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const el=document.getElementById('cst');const v=+((el||{}).value||0);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!v)return notify('Enter a valid amount.','err');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const p=curPlayer();const floor=A.bid?ladderFor(p)[0].v:(p?p.base:0);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(v&lt;floor)return notify('Minimum bid is '+fmt(floor)+'.','err');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>placeBid(v);</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function passBid(){const t=teamOf(session.teamId);notify(t.short+' passed on this round.','info');}</span></p>
+<p class="p1"><span class="s1">function hammer(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!A.lead)return notify('No bid to hammer down!','err');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const p=curPlayer();const t=teamOf(A.lead);if(!p||!t)return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(t.budget&lt;A.bid)return notify(t.short+' purse is below the winning bid — adjust the bag first.','err');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>t.budget-=A.bid; <span class="Apple-converted-space">                      </span>/* instant deduction */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>p.status='sold';p.soldTo=t.id;p.soldPrice=A.bid; <span class="Apple-converted-space">  </span>/* instant squad add */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const purseLeft=t.budget;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>A.history.push({s:'SOLD',n:p.name,a:A.bid,t:Date.now()});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const cap={name:p.name,img:p.img,cat:p.cat,team:t.name,short:t.short,color:t.color,price:A.bid,purseLeft:purseLeft};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>A={pid:null,bid:0,lead:null,status:'idle',history:A.history};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>selTeam=null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>saveT();saveP();saveA();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>broadcast({type:'sold',cap:cap});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>sGavel();setTimeout(sSold,180);confetti();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>showSoldOverlay(cap,'sold');</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function markUnsold(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const p=curPlayer();if(!p)return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>p.status='unsold';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const cap={name:p.name,img:p.img,cat:p.cat,base:p.base};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>A={pid:null,bid:0,lead:null,status:'idle',history:A.history};selTeam=null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>saveP();saveA();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>broadcast({type:'unsold',cap:cap});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>sUnsold();showSoldOverlay(cap,'unsold');</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function withdraw(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!confirm('Withdraw this player from the block and return him to the pool?'))return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>A={pid:null,bid:0,lead:null,status:'idle',history:A.history};selTeam=null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>saveA();broadcast({type:'toast',text:'Player withdrawn from the block.',kind:'info'});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>notify('Player withdrawn to the pool.','info');render();</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function showSoldOverlay(c,kind){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const old=document.getElementById('soldov');if(old)old.remove();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const o=document.createElement('div');o.className='soldov';o.id='soldov';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(kind==='sold'){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>o.innerHTML=`&lt;div class="sc"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="gavel"&gt;🔨&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="stamp s"&gt;SOLD!&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="who"&gt;${imgTag(c.img,c.name,c.color)}&lt;div class="nm"&gt;${c.name}&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="to"&gt;goes to &lt;span class="sw" style="background:${c.color}"&gt;&lt;/span&gt;&lt;b style="color:${c.color}"&gt;${c.team}&lt;/b&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="price"&gt;${fmt(c.price)}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="purseleft"&gt;${c.short} purse left · &lt;b&gt;${fmt(c.purseLeft)}&lt;/b&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div style="margin-top:22px"&gt;&lt;button class="btn btn-gold" onclick="closeSold()"&gt;Next Player →&lt;/button&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}else{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>o.innerHTML=`&lt;div class="sc"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div style="font-size:3rem"&gt;✋&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="stamp u"&gt;UNSOLD&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="who"&gt;${imgTag(c.img,c.name,'#7e8ca0')}&lt;div class="nm"&gt;${c.name}&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div style="font-family:'Teko';font-size:1.6rem;color:var(--mute)"&gt;No buyer at base ${fmt(c.base)}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div style="margin-top:22px"&gt;&lt;button class="btn btn-gold" onclick="closeSold()"&gt;Next Player →&lt;/button&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.body.appendChild(o);</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function closeSold(){const o=document.getElementById('soldov');if(o)o.remove();pendingRender=false;render();}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">/* ---------- login callout cycler ---------- */</span></p>
+<p class="p1"><span class="s1">setInterval(()=&gt;{const el=document.getElementById('callout');if(!el)return;const seq=[['GOING ONCE…','once'],['GOING TWICE…','twice'],['SOLD!','soldw']];const i=Math.floor(Date.now()/1500)%3;el.innerHTML=`&lt;span class="w ${seq[i][1]}"&gt;${seq[i][0]}&lt;/span&gt;`;},400);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">render();</span></p>
+<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
